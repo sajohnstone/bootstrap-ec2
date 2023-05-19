@@ -1,0 +1,22 @@
+---
+schemaVersion: "2.2"
+description: "EC2 Bootstrap example"
+mainSteps:
+  - action: "aws:runShellScript"
+    name: "bootstrap example"
+    inputs:
+      timeoutSeconds: '60'
+      runCommand:
+      - "sudo apt update -y"
+      - "sudo apt install -y nginx"
+      - "cat << 'EOF' >> /var/www/html/index.html
+        <!doctype html>
+        <html>
+          <head>
+            <title>Example Page</title>
+          </head>
+          <body>
+            <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+          </body>
+        </html>
+        EOF"

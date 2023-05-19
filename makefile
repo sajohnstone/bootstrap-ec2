@@ -1,7 +1,6 @@
 export SUBFOLDER ?= .
-export CI_PROJECT_NAME ?= docker-volume
-export CI_JOB_ID ?= local
-export AWS_MOUNT ?= ~/.aws:/root/.aws
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
 
 plan: init $(INIT_REQUIRED)
 	docker-compose run --rm terraform terraform plan
