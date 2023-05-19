@@ -1,22 +1,17 @@
 ---
 schemaVersion: "2.2"
-description: "EC2 Bootstrap example"
+description: "Command Document Example JSON Template"
+parameters:
 mainSteps:
   - action: "aws:runShellScript"
-    name: "bootstrap example"
+    name: "bootstrap_test"
     inputs:
-      timeoutSeconds: '60'
       runCommand:
-      - "sudo apt update -y"
-      - "sudo apt install -y nginx"
-      - "cat << 'EOF' >> /var/www/html/index.html
-        <!doctype html>
-        <html>
-          <head>
-            <title>Example Page</title>
-          </head>
-          <body>
-            <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-          </body>
-        </html>
-        EOF"
+        - "sudo amazon-linux-extras enable nginx1"
+        - "sudo yum install nginx -y"
+        - "sudo yum clean metadata"
+        - "sudo systemctl enable nginx"
+        - "sudo systemctl start nginx"        
+
+
+        

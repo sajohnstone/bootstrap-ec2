@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "nothing needed here"
+echo "if using an AMI without SSM agent, install agent here"
