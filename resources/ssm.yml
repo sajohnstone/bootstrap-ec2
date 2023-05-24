@@ -1,6 +1,6 @@
 ---
 schemaVersion: "2.2"
-description: "Command Document Example JSON Template"
+description: "Command Document Example"
 parameters:
 mainSteps:
   - action: "aws:runShellScript"
